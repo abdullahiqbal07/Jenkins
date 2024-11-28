@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:14' // Replace with the desired Node.js version
+        }
+    }
     stages {
         stage("checkout") {
             steps {
@@ -9,7 +13,7 @@ pipeline {
 
         stage("test") {
             steps {
-                sh 'apt-get update && apt-get install -y npm'
+                sh 'npm install'
                 sh 'npm test'
             }
         }
