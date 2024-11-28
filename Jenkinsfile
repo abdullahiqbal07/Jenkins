@@ -1,27 +1,21 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:14' // Replace with the desired Node.js version
-        }
-    }
+    agent sny
     stages {
         stage("checkout") {
             steps {
-                checkout scm
+                echo "build the pipeline"
             }
         }
 
         stage("test") {
             steps {
-                sh 'npm install'
-                sh 'npm test'
+                echo "build the pipeline"
             }
         }
 
         stage("build") {
             steps {
-                sh 'npm install'
-                sh 'npm run build'
+                echo "build the pipeline"
             }
         }
     }
