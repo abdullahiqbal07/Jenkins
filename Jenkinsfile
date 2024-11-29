@@ -15,7 +15,13 @@ pipeline {
 
         stage("build") {
             steps {
-                echo "build the pipeline"
+                sh "npm run build"
+            }
+        }
+
+        stage("build-image") {
+            steps {
+                sh "docker build -t jeckinlearn:1.0 ."
             }
         }
     }
