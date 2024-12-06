@@ -13,10 +13,6 @@ pipeline {
             }
         }
 
-        stage("build-image") {
-            steps {
-                sh "docker build -t jeckinlearn:1.0 ."
-            }
-        }
+       
     }
 }
